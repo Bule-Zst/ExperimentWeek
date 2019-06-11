@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Sqlite3Manager.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    Sqlite3Manager* s = [[ Sqlite3Manager alloc ] init];
+    [s addWithName:@"zstt" Number:@"B16" Sex:@"male"];
+    NSLog( @"%lu", [[s getByName:@"zst"] count] );
+    NSLog( @"%lu", [[s getByName:@"zstt"] count] );
+    //NSLog( [[[s getAllData] objectAtIndex:0]objectForKey:@"name"] );
 }
 
 
