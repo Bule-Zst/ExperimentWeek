@@ -15,14 +15,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)FMDatabase * database;
 
--(NSMutableArray*)getAll;
--(NSMutableArray*)getByName: (NSString *)name;
+- (void) showById: (NSInteger)index;
 
--(BOOL)addWithName: (NSString*) name Number: (NSString*)number Sex: (NSString*)sex;
+- (NSMutableArray*) getAll;
+- (NSMutableArray*) getByName: (NSString *)name;
 
--(BOOL)deleteById: (NSInteger)index;
+- (BOOL) addWithName: (NSString*) name Number: (NSString*)number Sex: (NSString*)sex;
 
--(BOOL)updateWithId: (NSInteger)index Name: (NSString*)name Number: (NSString*)number Sex: (NSString*)sex;
+- (BOOL) deleteById: (NSInteger)index;
+- (BOOL) deleteAll;
+
+- (BOOL) updateWithId: (NSInteger)index Name: (NSString*)name Number: (NSString*)number Sex: (NSString*)sex;
 
 
 @end

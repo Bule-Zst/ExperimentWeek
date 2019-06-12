@@ -120,6 +120,30 @@
     }
     return arr;
 }
+
+- (BOOL) deleteAll {
+    NSString * sql = [NSString stringWithFormat:@"delete from t_humen" ];
+    
+    if ([self.database executeUpdate:sql]) {
+        NSLog(@"删除成功！");
+        return true;
+    } else {
+        NSLog(@"删除失败！");
+        return false;
+    }
+}
+
+- (void) showById: (NSInteger)index {
+    NSMutableArray* arr = [self getAll];
+    for( NSDictionary* d in arr ) {
+        NSInteger _id = [[d objectForKey:@"id"] intValue];
+        if( _id == index ) {
+            NSLog(@"id is %ld, name is %@, number is %@ and sex is %@", (long)_id, [d objectForKey:@"name"], [d objectForKey:@"number"], [d objectForKey:@"sex"] );
+            return;
+        }
+    }
+}
+
 -(void)dealloc
 {
     //关闭数据库
