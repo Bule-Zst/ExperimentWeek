@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL) updateWithId: (NSInteger)index Name: (NSString*)name Number: (NSString*)number Sex: (NSString*)sex;
 
+- (void) test;
+
 
 @end
 
